@@ -1,68 +1,44 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer components {
+  .button-green {
+    @apply rounded uppercase py-2 text-sm bg-green-600 text-white px-5
   }
-  a:hover {
-    color: #747bff;
+
+  .button-green__outlined {
+    @apply rounded uppercase py-2 text-sm border-2 border-green-600 text-green-600 px-5
   }
-  button {
-    background-color: #f9f9f9;
+
+  .card {
+    @apply flex flex-col items-center relative
+  }
+  .card__desktop {
+    @apply flex-row items-stretch mt-5 mr-3
+  }
+
+  .card-image {
+    @apply block border z-10 size-20 rounded-full object-cover
+  }
+
+  .card-image__desktop {
+    @apply flex-1 border-r-0 rounded-l-md rounded-r-none h-auto min-h-full object-cover
+  }
+
+  .card-text {
+    @apply flex flex-col items-center justify-between w-full bg-white border rounded-md px-3 pt-12 pb-10 text-center relative -top-10
+  }
+
+  .card-text__desktop {
+    @apply flex-1 top-0 rounded-l-none border-l-0 px-10 pb-5
+  }
+
+  .card-badge {
+    @apply absolute -rotate-6 bottom-5 bg-pink-200 text-sm text-pink-900 font-medium py-2 px-4 z-10 border rounded
+  }
+
+  .card-badge__desktop {
+    @apply -top-2 -right-2 bottom-auto rotate-6
   }
 }
